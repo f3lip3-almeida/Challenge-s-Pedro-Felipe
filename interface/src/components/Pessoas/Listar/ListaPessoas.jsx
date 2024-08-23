@@ -14,7 +14,9 @@ function ListaPessoas() {
     useEffect(() => {
         const fetchPessoas = async () => {
             try {
-                const pessoas = await PessoasRequests.listarPessoas();
+                let pessoas = await PessoasRequests.listarPessoas();
+                 // Ordena as pessoas pelo nome em ordem alfabética
+                //pessoas.sort((a, b) => a.nome.localeCompare(b.nome));
                 setPessoas(pessoas);
             } catch (error) {
                 console.error('Erro ao buscar alunos: ', error);

@@ -116,7 +116,7 @@ export class Pessoa {
 
     static async listarPessoas(): Promise<Array<Pessoa> | null> {
         const listaPessoas: Array<Pessoa> = [];
-        const querySelectPessoas = `SELECT * FROM pessoas`;
+        const querySelectPessoas = `SELECT * FROM pessoas ORDER BY nome DESC`;
 
         try {
             const queryReturn = await database.query(querySelectPessoas);
